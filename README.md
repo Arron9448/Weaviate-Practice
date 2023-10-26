@@ -14,7 +14,7 @@ Using:<br/>
 - text2vec-openai API to vectorize raw data
 <br/>
 
-Proof of Success:<br/>
+Outcome:<br/>
 - Semantic search for vectors most similar to 'biology' (nearText)<br/>
 ![queryandresponse1](https://github.com/Arron9448/Weaviate-Practice/assets/144850440/69ba0b7d-e8d6-4ab5-865f-9134fe80c171)<br/>
 
