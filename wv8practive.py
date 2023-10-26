@@ -1,15 +1,16 @@
-from dotenv import load_dotenv
-load_dotenv() 
-
 import weaviate
 import os
 import json
 
-# Get API keys and WCS url (hidden as enviroment variables)
-wcs_url = os.environ.get('My-Weaviate-Endpoint')
-weaviate_key = os.environ.get('My-Weaviate-API-Key')
-openai_key = os.environ.get('My-OpenAI-Api-Key')
+from dotenv import load_dotenv
+load_dotenv() 
 
+# Get API keys and WCS url (hidden as enviroment variables)
+wcs_url = os.getenv("WEAVIATE_ENDPOINT")
+weaviate_key = os.getenv("WEAVIATE_API_KEY")
+openai_key = os.getenv("OPENAI_API_KEY")
+
+# Connect to WCS instance of Weaviate
 client = weaviate.Client(
     url = wcs_url,
     auth_client_secret=weaviate.AuthApiKey(api_key=weaviate_key),
@@ -17,3 +18,4 @@ client = weaviate.Client(
         "X-OpenAI-Api-Key": openai_key
     }
 )
+
