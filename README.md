@@ -1,6 +1,6 @@
 # Weaviate-Practice
 
-Practice using Weaviates Python client to manage a WCS instance of Weaviate for a 'Tiny Jeopardy!' data set.
+Practice using Weaviates Python client to manage a WCS instance of Weaviate for 'Tiny Jeopardy!' data set.
 
 Goals:
 1. Build a Weaviate vector database
