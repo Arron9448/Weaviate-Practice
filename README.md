@@ -16,6 +16,8 @@ Practice using Weaviates Python client to manage a WCS instance of Weaviate for 
 <br/>
 
 **Outcome:**<br/>
+Objects added to target class.<br/>
+<img width="1029" alt="image" src="https://github.com/Arron9448/Weaviate-Practice/assets/144850440/0633055b-26f5-42d4-b265-26bf4dab2963"><br/>
 Semantic search for objects with vectors most similar to 'biology'.<br/>
 ![queryandresponse1](https://github.com/Arron9448/Weaviate-Practice/assets/144850440/69ba0b7d-e8d6-4ab5-865f-9134fe80c171)<br/>
 <br/>
