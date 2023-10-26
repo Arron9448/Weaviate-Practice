@@ -15,10 +15,6 @@ openai_key = os.getenv("OPENAI_API_KEY")
 auth_config = weaviate.AuthApiKey(api_key=weaviate_key)
 client = weaviate.Client(
     url = wcs_url,
-    auth_client_secret=auth_config
-)
-client = weaviate.Client(
-    url = wcs_url,
     auth_client_secret=weaviate.AuthApiKey(api_key=weaviate_key),
     additional_headers = {
         "X-OpenAI-Api-Key": openai_key
@@ -36,3 +32,5 @@ class_obj = {
 }
 
 client.schema.create_class(class_obj)
+
+# Add objects using a batch import
