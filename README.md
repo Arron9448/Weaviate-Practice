@@ -21,7 +21,8 @@ Objects added to target class.<br/>
 Semantic search for objects with vectors most similar to 'biology'.<br/>
 ![queryandresponse1](https://github.com/Arron9448/Weaviate-Practice/assets/144850440/69ba0b7d-e8d6-4ab5-865f-9134fe80c171)<br/>
 Filtered semantic search for objects of 'SCIENCE' catagory most similar to 'materials'.<br/>
-<img width="957" alt="image" src="https://github.com/Arron9448/Weaviate-Practice/assets/144850440/02c8e6f4-36a0-4a64-96de-cc0684a9dcd7"><br/>
+![queryandresponse2](https://github.com/Arron9448/Weaviate-Practice/assets/144850440/dc0a36c6-fd30-4efb-a2cb-85589441f47f)
+
 <br/>
 
 **Resources:**<br/>
