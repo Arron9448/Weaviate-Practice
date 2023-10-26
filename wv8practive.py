@@ -22,7 +22,7 @@ client = weaviate.Client(
     }
 )
 
-# Define data collection using OpenAI Vectorizer
+# Define data schema using text2vec-openai
 class_obj = {
     "class": "Question",
     "vectorizer": "text2vec-openai",
@@ -32,12 +32,18 @@ class_obj = {
     }
 }
 
-#client.schema.create_class(class_obj)
+# Add Question schema
+client.schema.create_class(class_obj)
 
-# Batch import/vectorize sample data
+# Load sample data set
 resp = requests.get('https://raw.githubusercontent.com/weaviate-tutorials/quickstart/main/data/jeopardy_tiny.json')
-data = json.loads(resp.text) # Load data
-client.batch.configure(batch_size=100) # Configure batch
+data = json.loads(resp.text)
+
+# Configure Weaviate batch, with
+# - starting batch size of 100
+client.batch.configure(batch_size=100)
+
+# Import data
 with client.batch as batch:
     for i, d in enumerate(data):
         print(f"importing question: {i+1}")
@@ -50,3 +56,4 @@ with client.batch as batch:
             data_object=properties,
             class_name="Question"
         )
+
