@@ -25,6 +25,9 @@ client = weaviate.Client(
 # Ensure instance is live and ready
 assert client.is_ready()
 
+# Erase data in Question class and its schema
+client.schema.delete_class("Question")
+
 # Define data schema using text2vec-openai API
 class_obj = {
     "class": "Question",
@@ -36,12 +39,11 @@ class_obj = {
 }
 
 # Add Question schema
-# client.schema.create_class(class_obj)
+client.schema.create_class(class_obj)
 
 # Load 'Tiny Jeopardy!' sample data set
 resp = requests.get('https://raw.githubusercontent.com/weaviate-tutorials/quickstart/main/data/jeopardy_tiny.json')
 data = json.loads(resp.text)
-print(data)
 
 # Configure Weaviate batch, with
 # - starting batch size of 100
@@ -49,6 +51,7 @@ client.batch.configure(batch_size=100)
 
 # Import data
 with client.batch as batch:
+    # Batch import all Questions
     for i, d in enumerate(data):
         print(f"importing question: {i+1}")
         properties = {
@@ -59,4 +62,15 @@ with client.batch as batch:
         batch.add_data_object(properties, "Question")
 
 print("Importing Questions complete")
+
+# Sample Query - Semantic Similarity Search
+response = (
+    client.query
+    .get("Question", ["question", "answer", "category"])
+    .with_near_text({"concepts": ["biology"]})
+    .with_limit(2)
+    .do()
+)
+
+print(json.dumps(response, indent=4))
 
