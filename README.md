@@ -22,7 +22,8 @@ Semantic search for objects with vectors most similar to 'biology'.<br/>
 ![queryandresponse1](https://github.com/Arron9448/Weaviate-Practice/assets/144850440/69ba0b7d-e8d6-4ab5-865f-9134fe80c171)<br/>
 Filtered semantic search for objects of 'SCIENCE' catagory most similar to 'materials'.<br/>
 ![queryandresponse2](https://github.com/Arron9448/Weaviate-Practice/assets/144850440/dc0a36c6-fd30-4efb-a2cb-85589441f47f)
-
+Generative search for objects of 'SCIENCE' catagory most similar to 'materials' agumented prompts to make the LLM explain te answer of each object as it might to a five-year old.<br/>
+![queryandresponse2](https://github.com/Arron9448/Weaviate-Practice/assets/144850440/ac6fbc8e-15d6-4673-9376-a986bf7d9551)
 <br/>
 
 **Resources:**<br/>
