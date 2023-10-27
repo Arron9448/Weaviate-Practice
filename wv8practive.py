@@ -103,15 +103,15 @@ assert client.is_ready()
 #
 #print(json.dumps(response, indent=4))
 
-# Sample Query - Simple RAG Search (Grouped Task)
-response = (
-    client.query
-    .get("Question", ["question", "answer", "category"])
-    .with_near_text({"concepts": ["biology"]})
-    .with_generate(grouped_task="Write a linkedin post with emojis about these facts.")
-    .with_limit(2)
-    .do()
-)
-
-print(response["data"]["Get"]["Question"][0]["_additional"]["generate"]["groupedResult"])
+#### Sample Query - Simple RAG Search (Grouped Task)
+#response = (
+#    client.query
+#    .get("Question", ["question", "answer", "category"])
+#    .with_near_text({"concepts": ["biology"]})
+#    .with_generate(grouped_task="Write a linkedin post with emojis about these facts.")
+#    .with_limit(2)
+#    .do()
+#)
+#
+#print(response["data"]["Get"]["Question"][0]["_additional"]["generate"]["groupedResult"])
 
