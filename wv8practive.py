@@ -91,5 +91,15 @@ assert client.is_ready()
 #
 #print(json.dumps(response, indent=4))
 
+# Sample Query - RAG Search (Single Prompt)
+response = (
+    client.query
+    .get("Question", ["question", "answer", "category"])
+    .with_near_text({"concepts": ["materials"]})
+    .with_generate(single_prompt="Explain {answer} as you might to a five-year-old.")
+    .with_limit(2)
+    .do()
+)
 
+print(json.dumps(response, indent=4))
 
